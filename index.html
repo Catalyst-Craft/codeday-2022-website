@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="">
+<meta property="og:type" content="">
+<meta property="og:url" content="">
+<meta property="og:image" content="">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/minstyle.io@2.0.1/dist/css/minstyle.io.min.css">
+<meta name="theme-color" content="#fafafa">
+    <style>
+        .title-logo {
+            background-image: url(/static/img/kUNR7EDfTPZe3QkEmzgYAJ.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            height: 35rem;
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+            background-blend-mode: multiply;
+        }
+        .glitch {
+            position: relative;
+            color: white;
+            font-size: 4em;
+            letter-spacing: 0.5em;
+            /* Animation provies a slight random skew. Check bottom of doc
+            for more information on how to random skew. */
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+        .glitch::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            /* Creates an initial clip for our glitch. This works in
+            a typical top,right,bottom,left fashion and creates a mask
+            to only show a certain part of the glitch at a time. */
+            clip: rect(44px, 450px, 56px, 0);
+            /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+            with an alternating animation to keep things fresh. */
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            animation: glitch-anim2 1s infinite linear alternate-reverse;
+        }
+
+        /* Creates an animation with 20 steaps. For each step, it calculates
+        a percentage for the specific step. It then generates a random clip
+        box to be used for the random glitch effect. Also adds a very subtle
+        skew to change the 'thickness' of the glitch.*/
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(63px, 9999px, 16px, 0);
+                transform: skew(0.69deg);
+            }
+            5% {
+                clip: rect(7px, 9999px, 36px, 0);
+                transform: skew(0.18deg);
+            }
+            10% {
+                clip: rect(80px, 9999px, 61px, 0);
+                transform: skew(0.53deg);
+            }
+            15% {
+                clip: rect(24px, 9999px, 32px, 0);
+                transform: skew(0.12deg);
+            }
+            20% {
+                clip: rect(30px, 9999px, 14px, 0);
+                transform: skew(0.21deg);
+            }
+            25% {
+                clip: rect(77px, 9999px, 56px, 0);
+                transform: skew(0.8deg);
+            }
+            30% {
+                clip: rect(78px, 9999px, 67px, 0);
+                transform: skew(0.28deg);
+            }
+            35% {
+                clip: rect(38px, 9999px, 52px, 0);
+                transform: skew(0.72deg);
+            }
+            40% {
+                clip: rect(42px, 9999px, 68px, 0);
+                transform: skew(0.7deg);
+            }
+            45% {
+                clip: rect(44px, 9999px, 60px, 0);
+                transform: skew(0.09deg);
+            }
+            50% {
+                clip: rect(16px, 9999px, 99px, 0);
+                transform: skew(0.29deg);
+            }
+            55% {
+                clip: rect(7px, 9999px, 19px, 0);
+                transform: skew(0.43deg);
+            }
+            60% {
+                clip: rect(93px, 9999px, 75px, 0);
+                transform: skew(0.54deg);
+            }
+            65% {
+                clip: rect(85px, 9999px, 54px, 0);
+                transform: skew(0.85deg);
+            }
+            70% {
+                clip: rect(67px, 9999px, 28px, 0);
+                transform: skew(0.54deg);
+            }
+            75% {
+                clip: rect(57px, 9999px, 89px, 0);
+                transform: skew(0.33deg);
+            }
+            80% {
+                clip: rect(86px, 9999px, 44px, 0);
+                transform: skew(0.19deg);
+            }
+            85% {
+                clip: rect(46px, 9999px, 9px, 0);
+                transform: skew(0.08deg);
+            }
+            90% {
+                clip: rect(18px, 9999px, 15px, 0);
+                transform: skew(0.51deg);
+            }
+            95% {
+                clip: rect(55px, 9999px, 6px, 0);
+                transform: skew(0.35deg);
+            }
+            100% {
+                clip: rect(19px, 9999px, 55px, 0);
+                transform: skew(0.89deg);
+            }
+        }
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(18px, 9999px, 35px, 0);
+                transform: skew(0.37deg);
+            }
+            5% {
+                clip: rect(38px, 9999px, 7px, 0);
+                transform: skew(0.47deg);
+            }
+            10% {
+                clip: rect(90px, 9999px, 8px, 0);
+                transform: skew(0.14deg);
+            }
+            15% {
+                clip: rect(39px, 9999px, 74px, 0);
+                transform: skew(0.1deg);
+            }
+            20% {
+                clip: rect(3px, 9999px, 69px, 0);
+                transform: skew(0.28deg);
+            }
+            25% {
+                clip: rect(8px, 9999px, 53px, 0);
+                transform: skew(0.38deg);
+            }
+            30% {
+                clip: rect(36px, 9999px, 89px, 0);
+                transform: skew(0.26deg);
+            }
+            35% {
+                clip: rect(58px, 9999px, 13px, 0);
+                transform: skew(0.31deg);
+            }
+            40% {
+                clip: rect(96px, 9999px, 83px, 0);
+                transform: skew(0.81deg);
+            }
+            45% {
+                clip: rect(34px, 9999px, 3px, 0);
+                transform: skew(0.79deg);
+            }
+            50% {
+                clip: rect(31px, 9999px, 68px, 0);
+                transform: skew(0.37deg);
+            }
+            55% {
+                clip: rect(49px, 9999px, 47px, 0);
+                transform: skew(0.7deg);
+            }
+            60% {
+                clip: rect(40px, 9999px, 70px, 0);
+                transform: skew(0.56deg);
+            }
+            65% {
+                clip: rect(77px, 9999px, 4px, 0);
+                transform: skew(0.39deg);
+            }
+            70% {
+                clip: rect(41px, 9999px, 52px, 0);
+                transform: skew(0.09deg);
+            }
+            75% {
+                clip: rect(86px, 9999px, 40px, 0);
+                transform: skew(0.29deg);
+            }
+            80% {
+                clip: rect(28px, 9999px, 95px, 0);
+                transform: skew(0.95deg);
+            }
+            85% {
+                clip: rect(78px, 9999px, 5px, 0);
+                transform: skew(0.86deg);
+            }
+            90% {
+                clip: rect(94px, 9999px, 73px, 0);
+                transform: skew(0.77deg);
+            }
+            95% {
+                clip: rect(16px, 9999px, 47px, 0);
+                transform: skew(0.84deg);
+            }
+            100% {
+                clip: rect(57px, 9999px, 36px, 0);
+                transform: skew(0.88deg);
+            }
+        }
+        @keyframes glitch-skew {
+            0% {
+                transform: skew(-1deg);
+            }
+            10% {
+                transform: skew(-4deg);
+            }
+            20% {
+                transform: skew(1deg);
+            }
+            30% {
+                transform: skew(-2deg);
+            }
+            40% {
+                transform: skew(5deg);
+            }
+            50% {
+                transform: skew(5deg);
+            }
+            60% {
+                transform: skew(0deg);
+            }
+            70% {
+                transform: skew(3deg);
+            }
+            80% {
+                transform: skew(-4deg);
+            }
+            90% {
+                transform: skew(-4deg);
+            }
+            100% {
+                transform: skew(4deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="ms-menu">
+<div class="ms-menu-logo">
+<a href=""><img src="static/img/logo.png" /></a>
+</div>
+<nav class="ms-menu-link">
+<input type="checkbox" id="ms-menu-toggle" />
+<label for="ms-menu-toggle" class="ms-menu-icon"
+><i class="fa fa-bars"></i
+></label>
+<ul>
+<li><a href="/files/<download>" class="ms-btn" download>Download</a></li>
+</ul>
+</nav>
+</div>
+
+<!-- Add your site or application content here -->
+<div class="ms-card ms-fill">
+<div class="ms-card-content">
+    <div class="d-flex justify-content-center align-content-center">
+        <div class="ms-card ms-fill title-logo">
+            <h1 class="glitch" data-text="Time Flies">Time Flies</h1>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <div class="ms-card ms-border" style="width: 95%;">
+            <div class="ms-section">
+                <div class="ms-section-bloc">
+                    <div style="display: flex; justify-content: space-evenly;">
+                        <h3>Warp forward and backward in time</h3>
+                        <img src="/static/svg/undraw_time_management_re_tk5w.svg" style="height: 20rem"/>
+                    </div>
+                </div>
+                <div class="ms-section-bloc">
+                    <div style="display: flex; justify-content: space-evenly;">
+                        <img src="/static/svg/undraw_video_game_night_8h8m.svg" style="height: 20rem"/>
+                        <h3>Perfect for game nights</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://rawcdn.githack.com/Catalyst-Craft/My_City_Now/e54c400417f278805a0858558b2839aabc3c3af9/static/js/home.js"></script>
+</div>
+</div>
+<footer class="ms-footer ms-small">
+<div class="container">
+<p>Made During CodeDay 2022</p>
+</div>
+</footer>
+<script src="https://rawcdn.githack.com/Catalyst-Craft/My_City_Now/e54c400417f278805a0858558b2839aabc3c3af9/static/js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="https://rawcdn.githack.com/Catalyst-Craft/My_City_Now/e54c400417f278805a0858558b2839aabc3c3af9/static/js/plugins.js"></script>
+<script src="https://rawcdn.githack.com/Catalyst-Craft/My_City_Now/e54c400417f278805a0858558b2839aabc3c3af9/static/js/main.js"></script>
+<script src="https://rawcdn.githack.com/Catalyst-Craft/My_City_Now/e54c400417f278805a0858558b2839aabc3c3af9/static/js/dark.min.js"></script>
+
+</body>
+
+</html>
